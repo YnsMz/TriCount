@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme lForm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}TriCount{% endblock %}
+
+{% block body %}
+        <h1 class="text-center">Perfect Triangle Counter</h1>
+
+        <div class="container">
+                <div class="row justify-content-center">
+
+                        {{ form_start(lForm) }}
+
+                        {{ form_widget(lForm) }}
+
+                        <button type="submit" class="btn btn-success">Confirmer</button>
+
+                        {{ form_end(lForm) }}
+                </div>
+        </div>
+
+        {% if finalCount %}
+        <br>
+        <h1 class="text-center">Résultat: {{  finalCount }} Perfect Triangles</h1>
+        {% endif %}
+
+{% endblock %}
